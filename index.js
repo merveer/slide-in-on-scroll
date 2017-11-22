@@ -15,8 +15,13 @@ function debounce(func, wait = 20, immediate = true) {
 }
 
 const sliderImages = document.querySelectorAll('.slide-in');
-function checkSlide(e) {
-  console.count(e);
-}
-window.addEventListener('scroll', debounce(checkSlide));
 
+function checkSlide(e) {
+  sliderImages.forEach(slideImage) => {
+    //halfway through the image
+    const slideInAt = (window.scrollY + window.innerHeight) - slideImage.height / 2;
+    //bottom of the image
+    const imageBottom = sliderImage.offsetTop + sliderImage.height;
+  };
+  window.addEventListener('scroll', debounce(checkSlide));
+}
